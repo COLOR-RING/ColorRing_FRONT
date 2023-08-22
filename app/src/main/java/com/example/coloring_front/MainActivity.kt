@@ -11,6 +11,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import com.bumptech.glide.Glide
 import com.example.coloring_front.databinding.ActivityIntroBinding
 import com.example.coloring_front.databinding.ActivityMainBinding
+import android.widget.CheckBox
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -27,30 +29,77 @@ class MainActivity : AppCompatActivity() {
             activityResult.launch(intent)
         }
 
-        val red : ImageView = findViewById(R.id.red)
-        val green : ImageView = findViewById(R.id.green)
-        val blue : ImageView = findViewById(R.id.blue)
-        val all : ImageView = findViewById(R.id.all)
+        val red : CheckBox = findViewById(R.id.redCheckBox)
+        val green : CheckBox = findViewById(R.id.greenCheckBox)
+        val blue : CheckBox = findViewById(R.id.blueCheckBox)
+
+        val checkBoxSelectAll = findViewById<CheckBox>(R.id.allCheckBox)
+
         val picture : Button = findViewById(R.id.picture)
 
 
-        red.setOnClickListener{
-            red.setImageResource(R.drawable.aftercheck)
-        }
 
-        green.setOnClickListener{
-            red.setImageResource(R.drawable.aftercheck)
-        }
 
-        blue.setOnClickListener{
-            red.setImageResource(R.drawable.aftercheck)
-        }
 
-        all.setOnClickListener{
-            val gallery = Intent(this@MainActivity, GalleryActivity::class.java)
-            gallery.apply {
-                this.putExtra("gallery",0)
+        red.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                // 체크박스가 체크되었을 때의 동작
+                Toast.makeText(this, "적색을 선택하셨습니다", Toast.LENGTH_SHORT).show()
+            } else {
+                // 체크박스가 해제되었을 때의 동작
+                Toast.makeText(this, "선택을 취소하셨습니다", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        green.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                // 체크박스가 체크되었을 때의 동작
+                Toast.makeText(this, "녹색을 선택하셨습니다", Toast.LENGTH_SHORT).show()
+            } else {
+                // 체크박스가 해제되었을 때의 동작
+                Toast.makeText(this, "선택을 취소하셨습니다", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+
+        blue.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                // 체크박스가 체크되었을 때의 동작
+                Toast.makeText(this, "청색을 선택하셨습니다", Toast.LENGTH_SHORT).show()
+            } else {
+                // 체크박스가 해제되었을 때의 동작
+                Toast.makeText(this, "선택을 취소하셨습니다", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+
+        val checkBoxes = arrayOf(
+            findViewById<CheckBox>(R.id.redCheckBox),
+            findViewById<CheckBox>(R.id.greenCheckBox),
+            findViewById<CheckBox>(R.id.blueCheckBox)
+        )
+
+        checkBoxSelectAll.setOnCheckedChangeListener { _, isChecked ->
+            for (checkBox in checkBoxes) {
+                checkBox.isChecked = isChecked
+            }
+        }
+
+        for (checkBox in checkBoxes) {
+            checkBox.setOnCheckedChangeListener { _, _ ->
+                if (!checkBox.isChecked) {
+                    checkBoxSelectAll.isChecked = false
+                }
+            }
+        }
+
+
+
+        picture.setOnClickListener {
+//            val gallery = Intent(this@MainActivity, GalleryActivity::class.java)
+//                gallery.apply {
+//                this.putExtra("gallery", 0)
+//            }
 
 
         }
