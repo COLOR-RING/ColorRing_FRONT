@@ -1,6 +1,7 @@
 package com.example.coloring_front
 
 import android.content.Intent
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -32,16 +33,17 @@ class MainActivity : AppCompatActivity() {
         val all : ImageView = findViewById(R.id.all)
         val picture : Button = findViewById(R.id.picture)
 
-        red.setOnClickListener{
 
+        red.setOnClickListener{
+            red.setImageResource(R.drawable.aftercheck)
         }
 
         green.setOnClickListener{
-
+            red.setImageResource(R.drawable.aftercheck)
         }
 
         blue.setOnClickListener{
-
+            red.setImageResource(R.drawable.aftercheck)
         }
 
         all.setOnClickListener{
