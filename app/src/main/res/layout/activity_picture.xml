@@ -29,14 +29,34 @@
     </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="20dp"
         android:textSize="10dp"
         android:text="보는데에 불편함을 느끼시는 색을 선택해주세요!"
+        android:textColor="#776A6A"
         android:paddingLeft="35dp"
         android:layout_marginTop="25dp">
 
     </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        >
+
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/border"
+            android:backgroundTint="#ffffff"
+            but>
+
+        </Button>
+
+    </LinearLayout>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="50dp"
