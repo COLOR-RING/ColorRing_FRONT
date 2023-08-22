@@ -58,7 +58,6 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="35dp"
                 android:src="@drawable/beforecheck">
-
             </ImageView>
 
             <TextView
@@ -70,7 +69,6 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="7dp"
                 android:layout_marginTop="2dp">
-
             </TextView>
 
             <ImageView
@@ -93,7 +91,6 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="7dp"
                 android:layout_marginTop="2dp">
-
             </TextView>
 
             <ImageView
@@ -103,7 +100,6 @@
                 android:src="@drawable/beforecheck"
                 android:layout_marginLeft="35dp"
                 android:layout_gravity="center">
-
             </ImageView>
 
             <TextView
@@ -136,7 +132,6 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="7dp"
                 android:layout_marginTop="2dp">
-
             </TextView>
 
         </LinearLayout>
@@ -167,14 +162,6 @@
 
     <Button
         android:id="@+id/picture"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="갤러리에서 패턴화 할 사진 선택하기"
-        android:textSize="15dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="25dp"
-        android:backgroundTint="#353030">
-
     </Button>
 
 

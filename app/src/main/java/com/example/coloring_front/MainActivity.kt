@@ -5,11 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import com.example.coloring_front.databinding.ActivityIntroBinding
+import com.example.coloring_front.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
 
         val red : ImageView = findViewById(R.id.red)
         val green : ImageView = findViewById(R.id.green)
@@ -37,6 +42,7 @@ class MainActivity : AppCompatActivity() {
 
 
         }
-
+        
     }
 }
+
